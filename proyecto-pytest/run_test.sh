@@ -6,7 +6,8 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
 #Activar entorno virtual (compatible con sh y bash)
-. venv/bin/activate
+#. venv/bin/activate
+source venv/bin/activate
 
 echo "instalando dependencias....."
 pip install --upgrade pip
