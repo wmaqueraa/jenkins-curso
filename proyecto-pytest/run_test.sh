@@ -8,7 +8,7 @@ if [ ! -d "venv" ]; then
 fi
 #Activar entorno virtual (compatible con sh y bash)
 #. venv/bin/activate
-if [ -f "venv" ]; then
+if [ -f "venv/bin/activate" ]; then
     source venv/bin/activate
 elif [ -f "venv/Scripts/activate" ]; then #Para Windows
     source venv/Scripts/activate
