@@ -1,22 +1,29 @@
 #!/bin/bash
-set -e 
 
-echo "activando el entorno virtual..."
+echo "1.- Iniciando Ejecucion de Pruebas en Jenkins "
+
 if [ ! -d "venv" ]; then
+    echo "   1.1.- Entorno virtual no encontrado. Creandolo.."
     python3 -m venv venv
 fi
 #Activar entorno virtual (compatible con sh y bash)
 #. venv/bin/activate
-source venv/bin/activate
-
-echo "instalando dependencias....."
+if [ -f "venv" ]; then
+    source venv/bin/activate
+elif [ -f "venv/Scripts/activate" ]; then #Para Windows
+    source venv/Scripts/activate
+else
+    echo "Error : no se pudo activar el entorno virtual"
+    exit 1
+if
+echo "2- Instalando dependencias....."
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo "Creando carpeta reports..."
+echo "3.- Creando carpeta reports..."
 mkdir -p reports
 
-echo "ejecutando pruebas con Pytest......."
+echo "4.- Ejecutando pruebas con Pytest......."
 venv/bin/pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-results.html --self-contained-html
 
-echo "pruebas finalizadas resultados en reports" 
+echo "5.- Pruebas finalizadas resultados en reports" - 
