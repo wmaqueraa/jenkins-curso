@@ -15,7 +15,7 @@ elif [ -f "venv/Scripts/activate" ]; then #Para Windows
 else
     echo "Error : no se pudo activar el entorno virtual"
     exit 1
-if
+fi
 echo "2- Instalando dependencias....."
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -26,4 +26,4 @@ mkdir -p reports
 echo "4.- Ejecutando pruebas con Pytest......."
 venv/bin/pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-results.html --self-contained-html
 
-echo "5.- Pruebas finalizadas resultados en reports" - 
+echo "5.- Pruebas finalizadas resultados en reports"
