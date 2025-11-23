@@ -20,10 +20,15 @@ echo "2- Instalando dependencias....."
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo "3.- Creando carpeta reports..."
-mkdir -p reports
+echo "5. Ejecutando Pytest..."
+pytest --maxfail=1 --disable-warnings -q
 
-echo "4.- Ejecutando pruebas con Pytest......."
-venv/bin/pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-results.html --self-contained-html
+echo "6. Generando reportes..."
+pytest --junitxml=reports/resultados.xml
+#echo "3.- Creando carpeta reports..."
+#mkdir -p reports
 
-echo "5.- Pruebas finalizadas resultados en reports"
+#echo "4.- Ejecutando pruebas con Pytest......."
+#venv/bin/pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-results.html --self-contained-html
+
+#echo "5.- Pruebas finalizadas resultados en reports"
