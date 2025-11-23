@@ -2,10 +2,12 @@
 set -e
 echo "1.- Iniciando Ejecucion de Pruebas en Jenkins "
 
-if [ ! -d "venv" ]; then
-    echo "   1.1.- Entorno virtual no encontrado. Creandolo.."
-    python3 -m venv venv
-fi
+python3 -m venv venv
+
+#if [ ! -d "venv" ]; then
+#    echo "   1.1.- Entorno virtual no encontrado. Creandolo.."
+#    python3 -m venv venv
+#fi
 #Activar entorno virtual (compatible con sh y bash)
 #. venv/bin/activate
 if [ -f "venv/bin/activate" ]; then
