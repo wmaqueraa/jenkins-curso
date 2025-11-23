@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 echo "1.- Iniciando Ejecucion de Pruebas en Jenkins "
 
 if [ ! -d "venv" ]; then
