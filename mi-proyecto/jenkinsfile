@@ -20,7 +20,7 @@ pipeline{
 
     post {
         always{
-            echo "Siempre se ejecutara"
+            echo "Siempre se ejecutara..."
         }
         success{
             echo "Exito este bloquese ejeuta si tod el pipelinese ejecuta correcamente"
